@@ -1,5 +1,5 @@
-import { Sequelize } from "sequelize";
 import config from "../config/config.js";
+import { Sequelize } from "sequelize";
 
 const port = config.DB_PORT ? Number(config.DB_PORT) : 5432;
 

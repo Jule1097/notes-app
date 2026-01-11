@@ -8,7 +8,9 @@ const {
     DB_NAME,
     DB_USER,
     DB_PASSWORD,
-    DATABASE_URL
+    DATABASE_URL,
+    SUPABASE_URL,
+    SUPABASE_KEY
 } = process.env;
 
 const config = {
@@ -17,7 +19,9 @@ const config = {
     DB_NAME,
     DB_USER,
     DB_PASSWORD,
-    DATABASE_URL
+    DATABASE_URL,
+    SUPABASE_URL,
+    SUPABASE_KEY
 }
 
 export default config;

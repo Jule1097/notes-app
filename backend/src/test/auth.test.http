@@ -1,0 +1,17 @@
+@host=http://localhost
+
+@port=3000
+@contentType= application/json
+
+@userEmail = "challenge@test.com"
+@userPassword = "challenge1234"
+
+### User Login y captura del token
+# @name loginUser
+POST {{host}}:{{port}}/auth/login
+Content-Type: {{contentType}}
+
+{
+    "email": {{userEmail}},
+    "password": {{userPassword}}
+}

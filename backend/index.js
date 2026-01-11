@@ -1,11 +1,12 @@
 import { sequelize } from "./src/database/db.cnx.js";
+import supabaseCnx from "./src/database/supabase.cnx.js";
 import server from "./src/server.js";
 const port = process.env.PORT || 3000;
 
 const runServer = async () => {
     try {
         await sequelize.authenticate();
-        console.log("Database connected successfully.");
+        supabaseCnx.connection();
     } catch (error) {
         console.log("Unable to connect to the database:", error);
     }
