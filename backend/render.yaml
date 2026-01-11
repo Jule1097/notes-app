@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: notes-backend
+    env: node
+    repo: https://github.com/hirelens-challenges/Ibarra-39a112
+    branch: users-notes
+    buildCommand: npm ci
+    startCommand: npm run start:prod
+    plan: starter
+    envVars:
+      - key: NODE_ENV
+        value: production
+databases:
+  - name: notes-db
+    engine: postgresql
+    version: "14"
+    plan: starter
