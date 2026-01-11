@@ -8,18 +8,17 @@ export const NoteCategory = sequelize.define(
       type: DataTypes.UUID,
       allowNull: false,
       primaryKey: true,
-      references: { model: "notes", key: "id" },
+      field: "note_id",
     },
     categoryId: {
       type: DataTypes.UUID,
       allowNull: false,
       primaryKey: true,
-      references: { model: "categories", key: "id" },
+      field: "category_id",
     },
   },
   {
     tableName: "note_categories",
-    timestamps: false,
   }
 );
 

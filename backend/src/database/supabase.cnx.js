@@ -1,5 +1,5 @@
-import { createClient } from '@supabase/supabase-js';
 import config from '../config/config.js';
+import { createClient } from '@supabase/supabase-js';
 
 class supabaseCnx {
     static #instance = null;

@@ -7,7 +7,6 @@ const runServer = async () => {
     try {
         await sequelize.authenticate();
         supabaseCnx.connection();
-        console.log("Database connected successfully.");
     } catch (error) {
         console.log("Unable to connect to the database:", error);
     }

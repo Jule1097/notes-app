@@ -6,9 +6,39 @@
 
 @contentType= application/json
 
-@token = eyJhbGciOiJFUzI1NiIsImtpZCI6ImJjYjU2NGU4LTJjM2QtNGU2Ni04ZjQ5LTFiNmUxYmQ2NGQ0MCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3VvZXpyZGtlYWx5dm53bmV5dXF3LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJhNGNjMWNiMC0zNTljLTQ4MDUtYjNhYi1mYjk0YTE5MjkyOTQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY4MDk4OTIyLCJpYXQiOjE3NjgwOTUzMjIsImVtYWlsIjoiY2hhbGxlbmdlQHRlc3QuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NjgwOTUzMjJ9XSwic2Vzc2lvbl9pZCI6IjliOWNlNjY0LWZiYTgtNDI0ZC1hNWI4LWRhYWM4NGI4ZDY5MCIsImlzX2Fub255bW91cyI6ZmFsc2V9.9dkFXyDjWBWhqQzUtkN6t4eiwpNqaRzVaTMfS81e6c78ORFcqUUSp-23ORnp5RC3owypbfYZHcHblUeaeuzy7Q
+@noteId= 99dcde52-e178-4d9a-a5e4-e905e42666c2
 
-### get all notes
+@token = eyJhbGciOiJFUzI1NiIsImtpZCI6ImJjYjU2NGU4LTJjM2QtNGU2Ni04ZjQ5LTFiNmUxYmQ2NGQ0MCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3VvZXpyZGtlYWx5dm53bmV5dXF3LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJhNGNjMWNiMC0zNTljLTQ4MDUtYjNhYi1mYjk0YTE5MjkyOTQiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY4MTcyOTQzLCJpYXQiOjE3NjgxNjkzNDMsImVtYWlsIjoiY2hhbGxlbmdlQHRlc3QuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NjgxNjkzNDN9XSwic2Vzc2lvbl9pZCI6IjVmZjBkMDE0LWI1M2UtNGRmYi04NjIzLTgzMGZlNDM1ZDU3NiIsImlzX2Fub255bW91cyI6ZmFsc2V9.OULVG4vydkazTdJS4rsqMTGhd2WfCs8ui0XJZq5rMR8_v1a-7n5cEB9Qh1xSEeIc1uEcHshJhFn7UyoX4Xv-Cw
 GET {{host}}:{{port}}/{{endpoint}}
+Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
+
+### create a new note
+POST {{host}}:{{port}}/{{endpoint}}
+Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
+
+{
+  "title": "Testing — Q4 Sprint",
+  "content": "Quick notes: finalized timeline, assigned owners, seted deadline next Monday.",
+  "status": "ACTIVE",
+  "categories": ["Work", "Ideas", "Product"]
+}
+
+### update a note
+PUT {{host}}:{{port}}/{{endpoint}}/{{noteId}}
+Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
+
+{
+  "title": "Product Launch Plan — Q2 Sprint (updated)",
+  "content": "Finalize timeline, assign owners, set deadline next Tuesday.",
+  "status": "ARCHIVED",
+  "categories": ["Work", "Ideas", "Product"]
+}
+
+
+### delete a note
+DELETE {{host}}:{{port}}/{{endpoint}}/{{noteId}}
 Content-Type: {{contentType}}
 Authorization: Bearer {{token}}

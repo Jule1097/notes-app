@@ -9,24 +9,12 @@ export const Category = sequelize.define(
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    userId: {
-      type: DataTypes.UUID,
-      allowNull: false,
-      references: { model: "users", key: "id" },
-    },
+    name: { type: DataTypes.STRING, allowNull: false },
+    userId: { type: DataTypes.UUID, allowNull: false, field: "user_id" },
   },
   {
     tableName: "categories",
-    indexes: [
-      {
-        unique: true,
-        fields: ["userId", "name"],
-      },
-    ],
+    indexes: [{ unique: true, fields: ["user_id", "name"] }],
   }
 );
 

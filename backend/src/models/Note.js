@@ -9,23 +9,17 @@ export const Note = sequelize.define(
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    content: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
+    title: { type: DataTypes.STRING, allowNull: false },
+    content: { type: DataTypes.TEXT },
     status: {
       type: DataTypes.ENUM("ACTIVE", "ARCHIVED"),
-      allowNull: false,
       defaultValue: "ACTIVE",
     },
     userId: {
+      // JS name
       type: DataTypes.UUID,
       allowNull: false,
-      references: { model: "users", key: "id" },
+      field: "user_id", // DB column name
     },
   },
   {
