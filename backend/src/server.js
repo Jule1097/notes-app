@@ -1,4 +1,6 @@
 import express from "express";
+import notesRouter from "./routes/notes.router.js";
+import userRouter from "./routes/user.router.js";
 
 const server = express();
 
@@ -10,5 +12,8 @@ server.get("/", (req, res) => {
     status: "Ok",
   });
 });
+
+server.use('/auth', userRouter);
+server.use('/api', notesRouter);
 
 export default server;
