@@ -2,7 +2,7 @@ services:
   - type: web
     name: notes-backend
     env: node
-    repo: https://github.com/hirelens-challenges/Ibarra-39a112
+    repo: https://github.com/Jule1097/notes-app
     branch: users-notes
     buildCommand: npm ci
     startCommand: npm run start:prod
