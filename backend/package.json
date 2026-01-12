@@ -7,8 +7,7 @@
     "dev": "node --watch index.js",
     "start": "node index.js",
     "migrate": "npx sequelize-cli db:migrate",
-    "migrate:ipv4": "node scripts/migrate-ipv4.js",
-    "start:prod": "npm run migrate:ipv4 && node index.js"
+    "start:prod": "npx sequelize-cli db:migrate && node index.js"
   },
   "type": "module",
   "keywords": [],
