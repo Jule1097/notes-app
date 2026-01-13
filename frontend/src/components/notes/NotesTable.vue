@@ -104,7 +104,6 @@ export default {
     async function edit(payload) {
       const id = payload.id ?? payload._id ?? selected.value?.id ?? selected.value?._id;
       if (!id) {
-        console.error('Edit error: missing note id', payload);
         return;
       }
       try {

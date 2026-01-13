@@ -19,7 +19,6 @@ export function useNotes() {
     return run(async () => {
       const result = await notesService.getNotes();
       notes.value = result;
-      console.log('useNotes -> notes.value after fetch:', notes.value); // ← log temporal
       return notes.value;
     });
   }
@@ -27,21 +26,21 @@ export function useNotes() {
   async function createNote(payload) {
     return run(async () => {
       await notesService.createNote(payload);
-      await fetchNotes(); // siempre refetch después de crear
+      await fetchNotes(); 
     });
   }
 
   async function updateNote(id, payload) {
     return run(async () => {
       await notesService.updateNote(id, payload);
-      await fetchNotes(); // siempre refetch después de actualizar
+      await fetchNotes();
     });
   }
 
   async function deleteNote(id) {
     return run(async () => {
       await notesService.deleteNote(id);
-      await fetchNotes(); // siempre refetch después de eliminar
+      await fetchNotes();
     });
   }
 

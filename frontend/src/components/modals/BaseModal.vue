@@ -61,7 +61,7 @@ export default {
   box-sizing: border-box;
 }
 .modal-wrapper { width: 100%; max-width: 900px; pointer-events: none; }
-/* permitir interacciones dentro del diálogo */
+
 .modal-dialog {
   pointer-events: auto;
   background: #fff;

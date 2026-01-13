@@ -36,15 +36,10 @@ export default {
   setup(props, { emit }) {
     const local = ref({ ...props.modelValue });
     const categoriesInput = ref((props.modelValue.categories || []).join(', '));
-
-    // solo sincronizar desde props cuando cambia la nota externa (ej: al abrir modal con nueva nota)
-    // NO sobrescribir mientras el usuario edita
     watch(() => props.modelValue.id, () => {
       local.value = { ...props.modelValue };
       categoriesInput.value = (props.modelValue.categories || []).join(', ');
     });
-
-    // emitir cambios hacia arriba cuando el usuario edita
     watch([local, categoriesInput], () => {
       const categories = categoriesInput.value.split(',').map(s => s.trim()).filter(Boolean);
       emit('update:modelValue', { ...local.value, categories });

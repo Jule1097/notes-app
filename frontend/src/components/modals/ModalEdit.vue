@@ -30,7 +30,6 @@ export default {
           this.model = { id: null, title: '', content: '', status: 'ACTIVE', categories: [] };
           return;
         }
-        // extraer categories como array simple de strings
         let cats = [];
         if (Array.isArray(n.categories)) cats = n.categories;
         else if (Array.isArray(n.note_categories)) {
@@ -55,7 +54,6 @@ export default {
   methods: {
     onConfirm() {
       if (!this.isValid) return;
-      console.log('ModalEdit emit confirm:', this.model); // ← log temporal
       this.$emit('confirm', { ...this.model });
     },
     onCancel() { this.$emit('cancel'); }
